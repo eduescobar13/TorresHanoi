@@ -21,9 +21,9 @@ class Varilla { // Clase para la implementación de varillas de Las Torres de Ha
         ~Varilla(void); // Destructor.
 
         int getNumeroDiscosMaximo(); // Método getter del atributo numeroDiscosMaximo.
-        void setNumeroDiscosMaximo(numeroDiscosMaximo); // Método setter del atributo numeroDiscosMaximo.
+        void setNumeroDiscosMaximo(int numeroDiscosMaximo); // Método setter del atributo numeroDiscosMaximo.
         int getNumeroDiscosActual(); // Método getter del atributo numeroDiscosActual.
-        void setNumeroDiscosActual(numeroDiscosActual); // Método setter del atributo numeroDiscosActual.
+        void setNumeroDiscosActual(int numeroDiscosActual); // Método setter del atributo numeroDiscosActual.
         vector<int> getVectorVarilla(); // Método getter del atributo vectorVarilla.
         void setVectorVarilla(vector<int> vectorVarilla); // Método setter del atributo vectorVarilla.
 

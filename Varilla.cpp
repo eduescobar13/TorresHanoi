@@ -26,7 +26,7 @@ int Varilla::getNumeroDiscosMaximo() { // Método getter del atributo numeroDisc
 	return numeroDiscosMaximo;
 }
 
-void Varilla::setNumeroDiscosMaximo(numeroDiscosMaximo) { // Método setter del atributo numeroDiscosMaximo.
+void Varilla::setNumeroDiscosMaximo(int numeroDiscosMaximo) { // Método setter del atributo numeroDiscosMaximo.
 	this->numeroDiscosMaximo = numeroDiscosMaximo;
 }
 
@@ -34,15 +34,15 @@ int Varilla::getNumeroDiscosActual() { // Método getter del atributo numeroDisc
 	return numeroDiscosActual;
 }
 
-void Varilla::setNumeroDiscosActual(numeroDiscosActual) { // Método setter del atributo numeroDiscosActual.
+void Varilla::setNumeroDiscosActual(int numeroDiscosActual) { // Método setter del atributo numeroDiscosActual.
 	this->numeroDiscosActual = numeroDiscosActual;
 }
 
 vector<int> Varilla::getVectorVarilla() { // Método getter del atributo vectorVarilla.
-	return cintaEntrada;
+	return vectorVarilla;
 }
 
 void Varilla::setVectorVarilla(vector<int> vectorVarilla) { // Método setter del atributo vectorVarilla.
-	this->vectorVarilla = cintaEntrada;
+	this->vectorVarilla = vectorVarilla;
 }
 

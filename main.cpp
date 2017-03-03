@@ -17,14 +17,13 @@ int main(int argc, char *argv[]) {
 	system ("clear");
 
 	// DECLARACIÓN DE LOS OBJETOS.
-	UnidadEntrada *unidadEntrada;
-	UnidadMemoria *unidadMemoria;
-	UnidadALC	  *unidadALC;
-	UnidadSalida  *unidadSalida;
+
 
 	// DECLARACIÓN DE VARIABLES.
-	//char debugChar = *argv[4]; // Obtenemos el valor del debug.
-	//int debug = debugChar - '0'; // Convertimos dicho valor a un entero.
+	char numeroDiscosChar = *argv[1];
+	int numeroDiscos = numeroDiscosChar - '0';
+	char debugChar = *argv[2]; // Obtenemos el valor del debug.
+	int debug = debugChar - '0'; // Convertimos dicho valor a un entero.
 
 	cout << "  ___|PRÁCTICA 2: DISEÑO Y ANÁLISIS DE ALGORITMOS|___" << endl;
 	cout << "------------------- TORRES DE HANOI -------------------" << endl;
