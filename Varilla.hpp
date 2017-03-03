@@ -2,7 +2,9 @@
 
 #include <iostream> 
 #include <fstream>
-#include <vector>
+#include <stack>
+
+#include "Disco.hpp"
 
 using namespace std;
 
@@ -12,7 +14,7 @@ class Varilla { // Clase para la implementación de varillas de Las Torres de Ha
 
         int numeroDiscosMaximo; // Atributo para determinar el número de discos que soporta la varilla.
         int numeroDiscosActual; // Atributo para determinar el número de discos que hay actualmente en la varilla.
-        vector<int> vectorVarilla; // Vector que hará de varilla.
+        stack<Disco> pilaVarilla; // Pila para implementar la varilla. Formada por objetos de la clase Disco.
 
     public: // Métodos privados de la clase.
 
@@ -20,11 +22,13 @@ class Varilla { // Clase para la implementación de varillas de Las Torres de Ha
         Varilla(int numeroDiscos); // Constructor.
         ~Varilla(void); // Destructor.
 
+        void destruirVarilla(); // Método para eliminar las varillas. Simulación de destructor permitiendo acceso.
+
         int getNumeroDiscosMaximo(); // Método getter del atributo numeroDiscosMaximo.
         void setNumeroDiscosMaximo(int numeroDiscosMaximo); // Método setter del atributo numeroDiscosMaximo.
         int getNumeroDiscosActual(); // Método getter del atributo numeroDiscosActual.
         void setNumeroDiscosActual(int numeroDiscosActual); // Método setter del atributo numeroDiscosActual.
-        vector<int> getVectorVarilla(); // Método getter del atributo vectorVarilla.
-        void setVectorVarilla(vector<int> vectorVarilla); // Método setter del atributo vectorVarilla.
+        stack<int> getPilaVarilla(); // Método getter del atributo vectorVarilla.
+        void setPilaVarilla(stack<int> pilaVarilla); // Método setter del atributo vectorVarilla.
 
 };

@@ -3,19 +3,20 @@
 Varilla::Varilla(void): // Constructor por defecto.
     numeroDiscosMaximo(0),
     numeroDiscosActual(0),
-    vectorVarilla()
+    pilaVarilla()
 {}
 
 Varilla::Varilla(int tamanoVarilla): // Constructor.
     numeroDiscosMaximo(tamanoVarilla),
-    numeroDiscosActual(0), // Inicialmente no habrá disco en la varilla.
-    vectorVarilla()
-{
-	vectorVarilla.resize(numeroDiscosMaximo); // Redimensionamos el vector.
-}
+    numeroDiscosActual(), // Inicialmente no habrá disco en la varilla.
+    pilaVarilla()
+{}
 
 Varilla::~Varilla(void) { // Destructor.
-	vectorVarilla.clear(); // Vaciamos el vectorVarilla.
+	destruirVarilla();
+}
+
+void Varilla::destruirVarilla() { // Método para eliminar las varillas. Simulación de destructor permitiendo acceso.
 	numeroDiscosMaximo = 0;
 	numeroDiscosActual = 0;
 }
@@ -38,11 +39,11 @@ void Varilla::setNumeroDiscosActual(int numeroDiscosActual) { // Método setter 
 	this->numeroDiscosActual = numeroDiscosActual;
 }
 
-vector<int> Varilla::getVectorVarilla() { // Método getter del atributo vectorVarilla.
-	return vectorVarilla;
+stack<int> Varilla::getPilaVarilla() { // Método getter del atributo pilaVarilla.
+	return pilaVarilla;
 }
 
-void Varilla::setVectorVarilla(vector<int> vectorVarilla) { // Método setter del atributo vectorVarilla.
-	this->vectorVarilla = vectorVarilla;
+void Varilla::setPilaVarilla(stack<int> pilaVarilla) { // Método setter del atributo pilaVarilla.
+	this->pilaVarilla = pilaVarilla;
 }
 

@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
 	system ("clear");
 
 	// DECLARACIÓN DE LOS OBJETOS.
-
+	TorresHanoi *torresHanoi;
 
 	// DECLARACIÓN DE VARIABLES.
 	char numeroDiscosChar = *argv[1];
@@ -27,6 +27,8 @@ int main(int argc, char *argv[]) {
 
 	cout << "  ___|PRÁCTICA 2: DISEÑO Y ANÁLISIS DE ALGORITMOS|___" << endl;
 	cout << "------------------- TORRES DE HANOI -------------------" << endl;
+
+	torresHanoi = new TorresHanoi(numeroDiscos);
 
 	return(0); 
 }
