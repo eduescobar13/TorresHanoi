@@ -32,7 +32,7 @@ void Varilla::insertarDisco(Disco *discoInsertar) { // Método para insertar un 
 		cout << "OPERACIÓN NO PERMITIDA ¡PONER EXCEPCION!" << endl;
 	}
 	else {
-		getPilaVarilla().push(*discoInsertar);
+		pilaVarilla.push(*discoInsertar);
 	}
 }
 

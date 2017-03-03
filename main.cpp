@@ -31,9 +31,6 @@ int main(int argc, char *argv[]) {
 	cout << "------------------- TORRES DE HANOI -------------------" << endl;
 
 	torresHanoi = new TorresHanoi(numeroDiscos);
-	cout << "Ta1: " << torresHanoi->getVarillaIzquierda()->getPilaVarilla().size() << endl;
-	cout << "Ta2: " << torresHanoi->getVarillaCentral()->getPilaVarilla().size() << endl;
-	cout << "Ta3: " << torresHanoi->getVarillaDerecha()->getPilaVarilla().size() << endl;
 
 	return(0); 
 }
