@@ -19,16 +19,17 @@ class Varilla { // Clase para la implementación de varillas de Las Torres de Ha
     public: // Métodos privados de la clase.
 
     	Varilla(void); // Constructor por defecto.
-        Varilla(int numeroDiscos); // Constructor.
+        Varilla(int tamanoVarilla, int numeroDiscosInicial); // Constructor.
         ~Varilla(void); // Destructor.
 
         void destruirVarilla(); // Método para eliminar las varillas. Simulación de destructor permitiendo acceso.
+        void insertarDisco(Disco *discoInsertar); // Método para insertar un disco en la varilla.
 
         int getNumeroDiscosMaximo(); // Método getter del atributo numeroDiscosMaximo.
         void setNumeroDiscosMaximo(int numeroDiscosMaximo); // Método setter del atributo numeroDiscosMaximo.
         int getNumeroDiscosActual(); // Método getter del atributo numeroDiscosActual.
         void setNumeroDiscosActual(int numeroDiscosActual); // Método setter del atributo numeroDiscosActual.
-        stack<int> getPilaVarilla(); // Método getter del atributo vectorVarilla.
-        void setPilaVarilla(stack<int> pilaVarilla); // Método setter del atributo vectorVarilla.
+        stack<Disco> getPilaVarilla(); // Método getter del atributo vectorVarilla.
+        void setPilaVarilla(stack<Disco> pilaVarilla); // Método setter del atributo vectorVarilla.
 
 };

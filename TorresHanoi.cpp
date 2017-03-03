@@ -13,9 +13,10 @@ TorresHanoi::TorresHanoi(int numeroDiscos): // Constructor.
     varillaCentral(),
     varillaDerecha()
 {
-	varillaIzquierda = new Varilla(numeroDiscos); // Inicialización de las varillas pasando el número introducido por el usuario.
-	varillaCentral   = new Varilla(numeroDiscos);
-	varillaDerecha   = new Varilla(numeroDiscos);
+	// Inicialización de las varillas pasando el número introducido por el usuario como valor máximo. 
+	varillaIzquierda = new Varilla(numeroDiscos, numeroDiscos); // Sólo la varilla izquierda tendrá todos los discos.
+	varillaCentral   = new Varilla(numeroDiscos, 0);
+	varillaDerecha   = new Varilla(numeroDiscos, 0);
 }
 
 TorresHanoi::~TorresHanoi(void) { // Destructor.
@@ -25,8 +26,8 @@ TorresHanoi::~TorresHanoi(void) { // Destructor.
 	varillaDerecha->destruirVarilla();
 }
 
-void TorresHanoi::resolverProblema(int debug) {
-	
+void TorresHanoi::resolverProblema(int debug) { // Método principal que resuelve el problema de Las Torres de Hanoi.
+
 }
 
 //----------------> MÉTODOS GETTER Y SETTER DE LA CLASE.
@@ -37,4 +38,28 @@ int TorresHanoi::getNumeroDiscos() { // Método getter del atributo numeroDiscos
 
 void TorresHanoi::setNumeroDiscos(int numeroDiscos) { // Método setter del atributo numeroDiscos.
 	this->numeroDiscos = numeroDiscos;
+}
+
+Varilla* TorresHanoi::getVarillaIzquierda() { // Método getter del atributo varillaIzquierda.
+	return varillaIzquierda;
+}
+
+void TorresHanoi::setVarillaIzquierda(Varilla varillaIzquierda) { // Método setter del atributo Izquierda.
+	this->varillaIzquierda = &varillaIzquierda;
+}
+
+Varilla* TorresHanoi::getVarillaCentral() { // Método getter del atributo varillaCentral.
+	return varillaCentral;
+}
+
+void TorresHanoi::setVarillaCentral(Varilla varillaCentral) { // Método setter del atributo varillaCentral.
+	this->varillaCentral = &varillaCentral;
+}
+        
+Varilla* TorresHanoi::getVarillaDerecha() { // Método getter del atributo varillaDerecha.
+	return varillaDerecha;
+}
+        
+void TorresHanoi::setVarillaDerecha(Varilla varillaDerecha) { // Método setter del atributo varillaDerecha.
+	this->varillaDerecha = &varillaDerecha;
 }

@@ -22,13 +22,15 @@ class TorresHanoi { // Clase para la implementación del juego Las Torres de Han
         TorresHanoi(int numeroDiscos); // Constructor.
         ~TorresHanoi(void); // Destructor.
 
+        void resolverProblema(int debug); // Método principal que resuelve el problema de Las Torres de Hanoi.
+
         int getNumeroDiscos(); // Método getter del atributo numeroDiscos.
         void setNumeroDiscos(int numeroDiscos); // Método setter del atributo numeroDiscos.
-        int getVarillaIzquierda(); // Método getter del atributo varillaIzquierda.
+        Varilla* getVarillaIzquierda(); // Método getter del atributo varillaIzquierda.
         void setVarillaIzquierda(Varilla varillaIzquierda); // Método setter del atributo Izquierda.
-        int getVarillaCentral(); // Método getter del atributo varillaCentral.
+        Varilla* getVarillaCentral(); // Método getter del atributo varillaCentral.
         void setVarillaCentral(Varilla varillaCentral); // Método setter del atributo varillaCentral.
-        int getVarillaDerecha(); // Método getter del atributo varillaDerecha.
+        Varilla* getVarillaDerecha(); // Método getter del atributo varillaDerecha.
         void setVarillaDerecha(Varilla varillaDerecha); // Método setter del atributo varillaDerecha.
 
 };
