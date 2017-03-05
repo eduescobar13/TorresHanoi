@@ -26,8 +26,17 @@ TorresHanoi::~TorresHanoi(void) { // Destructor.
 	varillaDerecha->destruirVarilla();
 }
 
-void TorresHanoi::resolverProblema(int debug) { // Método principal que resuelve el problema de Las Torres de Hanoi.
+void TorresHanoi::moverDisco(Varilla *varillaInicial, Varilla *varillaFinal) { // Método para mover un disco de una varilla a otra.
+	varillaFinal->insertarDisco(varillaInicial->extraerDisco());
+}
 
+void TorresHanoi::resolverProblema(int debug) { // Método principal que resuelve el problema de Las Torres de Hanoi.
+	if (getVarillaIzquierda()->getPilaVarilla().size() == 1) {
+		moverDisco(getVarillaIzquierda(), getVarillaDerecha());
+	}
+	else {
+		moverDisco(getVarillaIzquierda(), getVarillaCentral());
+	}
 }
 
 //----------------> MÉTODOS GETTER Y SETTER DE LA CLASE.

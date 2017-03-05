@@ -12,7 +12,7 @@ Varilla::Varilla(int tamanoVarilla, int numeroDiscosInicial): // Constructor.
     pilaVarilla()
 {
 	Disco *disco;
-	for (int i = (numeroDiscosInicial - 1); i >= 0; i--) {
+	for (int i = numeroDiscosInicial; i > 0; i--) {
 		disco = new Disco(i); // Creamos un nuevo disco con el radio dado por i (nos aseguramos que se introduzcan con radios diferentes).
 		insertarDisco(disco);
 	} 
@@ -28,11 +28,25 @@ void Varilla::destruirVarilla() { // Método para eliminar las varillas. Simulac
 }
 
 void Varilla::insertarDisco(Disco *discoInsertar) { // Método para insertar un disco en la varilla.
-	if (getPilaVarilla().size() == getNumeroDiscosMaximo()) {
+	if (this->pilaVarilla.size() == getNumeroDiscosMaximo()) {
 		cout << "OPERACIÓN NO PERMITIDA ¡PONER EXCEPCION!" << endl;
 	}
 	else {
-		pilaVarilla.push(*discoInsertar);
+		this->pilaVarilla.push(*discoInsertar);
+	}
+}
+
+Disco* Varilla::extraerDisco() { // Método para extraer un disco de la varilla.
+	Disco *discoExtraer;
+	int radioExtraer = 0;
+	if (this->pilaVarilla.empty()) {
+		cout << "EXCEPCION: No hay discos en la varilla" << endl;
+	}
+	else {
+		radioExtraer = this->pilaVarilla.top().getRadio();
+		discoExtraer = new Disco(radioExtraer);
+		this->pilaVarilla.pop();
+		return discoExtraer;
 	}
 }
 

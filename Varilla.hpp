@@ -24,6 +24,7 @@ class Varilla { // Clase para la implementación de varillas de Las Torres de Ha
 
         void destruirVarilla(); // Método para eliminar las varillas. Simulación de destructor permitiendo acceso.
         void insertarDisco(Disco *discoInsertar); // Método para insertar un disco en la varilla.
+        Disco* extraerDisco(); // Método para extraer un disco de la varilla.
 
         int getNumeroDiscosMaximo(); // Método getter del atributo numeroDiscosMaximo.
         void setNumeroDiscosMaximo(int numeroDiscosMaximo); // Método setter del atributo numeroDiscosMaximo.

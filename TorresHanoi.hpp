@@ -22,6 +22,7 @@ class TorresHanoi { // Clase para la implementación del juego Las Torres de Han
         TorresHanoi(int numeroDiscos); // Constructor.
         ~TorresHanoi(void); // Destructor.
 
+        void moverDisco(Varilla *varillaInicial, Varilla *varillaFinal); // Método para mover un disco de una varilla a otra.
         void resolverProblema(int debug); // Método principal que resuelve el problema de Las Torres de Hanoi.
 
         int getNumeroDiscos(); // Método getter del atributo numeroDiscos.
