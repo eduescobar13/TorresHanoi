@@ -1,12 +1,14 @@
 #include "Varilla.hpp" // Incluimos el fichero Varilla.hpp con las declaracion de nuestra clase.
 
 Varilla::Varilla(void): // Constructor por defecto.
+	nombreVarilla(),
     numeroDiscosMaximo(0),
     numeroDiscosActual(0),
     pilaVarilla()
 {}
 
-Varilla::Varilla(int tamanoVarilla, int numeroDiscosInicial): // Constructor.
+Varilla::Varilla(string nombre, int tamanoVarilla, int numeroDiscosInicial): // Constructor.
+	nombreVarilla(nombre),
     numeroDiscosMaximo(tamanoVarilla),
     numeroDiscosActual(numeroDiscosInicial), // Inicialmente lo ponemos al número de discos pasado por parámetro.
     pilaVarilla()
@@ -51,6 +53,14 @@ Disco* Varilla::extraerDisco() { // Método para extraer un disco de la varilla.
 }
 
 //----------------> MÉTODOS GETTER Y SETTER DE LA CLASE.
+
+string Varilla::getNombreVarilla() { // Método getter del atributo nombreVarilla.
+	return nombreVarilla;
+}
+
+void Varilla::setNombreVarilla(int nombreVarilla) { // Método setter del atributo nombreVarilla.
+	this->nombreVarilla = nombreVarilla;
+}
 
 int Varilla::getNumeroDiscosMaximo() { // Método getter del atributo numeroDiscosMaximo.
 	return numeroDiscosMaximo;

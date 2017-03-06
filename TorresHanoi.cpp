@@ -14,9 +14,9 @@ TorresHanoi::TorresHanoi(int numeroDiscos): // Constructor.
     varillaDerecha()
 {
 	// Inicialización de las varillas pasando el número introducido por el usuario como valor máximo. 
-	varillaIzquierda = new Varilla(numeroDiscos, numeroDiscos); // Sólo la varilla izquierda tendrá todos los discos.
-	varillaCentral   = new Varilla(numeroDiscos, 0);
-	varillaDerecha   = new Varilla(numeroDiscos, 0);
+	varillaIzquierda = new Varilla("VARILLA IZQUIERDA", numeroDiscos, numeroDiscos); // Sólo la varilla izquierda tendrá todos los discos.
+	varillaCentral   = new Varilla("VARILLA CENTRAL", numeroDiscos, 0);
+	varillaDerecha   = new Varilla("VARILLA DERECHA", numeroDiscos, 0);
 }
 
 TorresHanoi::~TorresHanoi(void) { // Destructor.
@@ -30,12 +30,40 @@ void TorresHanoi::moverDisco(Varilla *varillaInicial, Varilla *varillaFinal) { /
 	varillaFinal->insertarDisco(varillaInicial->extraerDisco());
 }
 
-void TorresHanoi::resolverProblema(int debug) { // Método principal que resuelve el problema de Las Torres de Hanoi.
-	if (getVarillaIzquierda()->getPilaVarilla().size() == 1) {
-		moverDisco(getVarillaIzquierda(), getVarillaDerecha());
+int TorresHanoi::resolverProblema(int debug) { // Método de acceso al método principal de resolución evitando la llamada con excesivos parámetros desde el main.
+	int variableRetorno = 0;
+	hanoiRecursivo(this->getNumeroDiscos(), this->getVarillaIzquierda(), this->getVarillaCentral(), this->getVarillaDerecha(), debug, variableRetorno);
+	return variableRetorno;
+}
+
+void TorresHanoi::hanoiRecursivo(int numeroDiscos, Varilla *varillaInicial, Varilla *varillaAuxiliar, Varilla *varillaFinal, int debug, int &numeroMovimientos) { // Método principal que resuelve el problema de Las Torres de Hanoi.
+	if (numeroDiscos == 1) {
+		if (debug == 1) {
+			cout << "--------------- SIGUIENTE PASO ---------------" << endl;
+			cout << "VARILLA IZQUIERDA: " << varillaInicial->getPilaVarilla().size() << " discos" << endl;
+			cout << "VARILLA CENTRAL: " << varillaAuxiliar->getPilaVarilla().size() << " discos" << endl;
+			cout << "VARILLA DERECHA: " << varillaFinal->getPilaVarilla().size() << " discos" << endl;
+			cout << "MOVIMIENTO: Disco de radio " << varillaInicial->getPilaVarilla().top().getRadio() << " desde " << varillaInicial->getNombreVarilla() << " a " << varillaFinal->getNombreVarilla() << endl;
+			cout << "Pulse ENTER para continuar ";
+			getchar();
+		}	
+		moverDisco(varillaInicial, varillaFinal);
+		numeroMovimientos++;
 	}
 	else {
-		moverDisco(getVarillaIzquierda(), getVarillaCentral());
+		hanoiRecursivo((numeroDiscos - 1), varillaInicial, varillaFinal, varillaAuxiliar, debug, numeroMovimientos);
+		if (debug == 1) {
+			cout << "--------------- SIGUIENTE PASO ---------------" << endl;
+			cout << "VARILLA IZQUIERDA: " << varillaInicial->getPilaVarilla().size() << " discos" << endl;
+			cout << "VARILLA CENTRAL: " << varillaAuxiliar->getPilaVarilla().size() << " discos" << endl;
+			cout << "VARILLA DERECHA: " << varillaFinal->getPilaVarilla().size() << " discos" << endl;
+			cout << "MOVIMIENTO: Disco de radio " << varillaInicial->getPilaVarilla().top().getRadio() << " desde " << varillaInicial->getNombreVarilla() << " a " << varillaFinal->getNombreVarilla() << endl;
+			cout << "Pulse ENTER para continuar ";
+			getchar();
+        }
+		moverDisco(varillaInicial, varillaFinal);
+		numeroMovimientos++;
+        hanoiRecursivo((numeroDiscos - 1), varillaAuxiliar, varillaInicial, varillaFinal, debug, numeroMovimientos);
 	}
 }
 
