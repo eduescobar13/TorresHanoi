@@ -43,7 +43,6 @@ void TorresHanoi::hanoiRecursivo(int numeroDiscos, Varilla *varillaInicial, Vari
 			cout << "VARILLA IZQUIERDA: " << varillaInicial->getPilaVarilla().size() << " discos" << endl;
 			cout << "VARILLA CENTRAL: " << varillaAuxiliar->getPilaVarilla().size() << " discos" << endl;
 			cout << "VARILLA DERECHA: " << varillaFinal->getPilaVarilla().size() << " discos" << endl;
-			cout << "MOVIMIENTO: Disco de radio " << varillaInicial->getPilaVarilla().top().getRadio() << " desde " << varillaInicial->getNombreVarilla() << " a " << varillaFinal->getNombreVarilla() << endl;
 			cout << "Pulse ENTER para continuar ";
 			getchar();
 		}	
@@ -57,7 +56,6 @@ void TorresHanoi::hanoiRecursivo(int numeroDiscos, Varilla *varillaInicial, Vari
 			cout << "VARILLA IZQUIERDA: " << varillaInicial->getPilaVarilla().size() << " discos" << endl;
 			cout << "VARILLA CENTRAL: " << varillaAuxiliar->getPilaVarilla().size() << " discos" << endl;
 			cout << "VARILLA DERECHA: " << varillaFinal->getPilaVarilla().size() << " discos" << endl;
-			cout << "MOVIMIENTO: Disco de radio " << varillaInicial->getPilaVarilla().top().getRadio() << " desde " << varillaInicial->getNombreVarilla() << " a " << varillaFinal->getNombreVarilla() << endl;
 			cout << "Pulse ENTER para continuar ";
 			getchar();
         }
