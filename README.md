@@ -1,5 +1,5 @@
-#ESIT ULL Grado de Informática
-##DISEÑO Y ANÁLISIS DE ALGORITMOS. Elaboración de un algoritmo basado en la técnica Divide y Vencerás para resolver el problema de Las Torres de Hanoi.
+# ESIT ULL Grado de Informática
+## DISEÑO Y ANÁLISIS DE ALGORITMOS. Elaboración de un algoritmo basado en la técnica Divide y Vencerás para resolver el problema de Las Torres de Hanoi.
 #### Realizada por Eduardo Escobar Alberto
 
 ##### **COMPILACIÓN: g++ -g main.cpp -o Varilla.cpp Disco.cpp TorresHanoi**
